@@ -47,9 +47,10 @@ async function main() {
     // When the client is ready, run this code (only once)
     // We use 'c' for the event parameter to keep it separate from the already defined 'client'
     const api = new ChatGPTAPIBrowser({
-        email: "kawiryand@gmail.com",
-        password: "Jokoipo12!@",
-        nopechaKey: "sub_1MK7qjCRwBwvt6ptY0e0QI6A",
+        email: process.env.email,
+        password: process.env.password,
+        nopechaKey: process.env.nopechaKey,
+       
     })
 
     await api.initSession()
