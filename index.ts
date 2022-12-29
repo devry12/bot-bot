@@ -1,14 +1,16 @@
 require('dotenv').config()
 // Require the necessary discord.js classes
 const { Client, REST, Routes, Events, Collection, GatewayIntentBits } = require('discord.js');
-const { token, clientId } = require('./config.json');
 const { ChatGPTAPIBrowser } = require('chatgpt')
 const fs = require('node:fs');
 const path = require('node:path');
 
 
 
+
 async function main() {
+     var token = process.env.tokenBot
+     var clientId = process.env.clientId
     if (typeof localStorage === "undefined" || localStorage === null) {
         var LocalStorage = require('node-localstorage').LocalStorage;
         localStorage = new LocalStorage('./scratch');
